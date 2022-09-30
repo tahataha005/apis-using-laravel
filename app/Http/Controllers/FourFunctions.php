@@ -42,4 +42,22 @@ class FourFunctions extends Controller{
         }
         return $overall;
     }
+
+    function order($s){
+        
+        $nums = [];
+        for($i = 0; $i < strlen($s);$i++){
+            if (is_numeric($s[$i])){
+                $nums[] = $s[$i];
+                $s = str_replace($s[$i],"",$s);
+            }
+        }
+
+        $letters = str_split($s);
+        sort($letters);
+        sort($nums);
+        $overall_array = array_merge($s,$nums);
+        $overall = implode($overall_array);
+        echo $overall;
+    }
 }
