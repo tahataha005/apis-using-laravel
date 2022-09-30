@@ -27,4 +27,19 @@ class FourFunctions extends Controller{
 
         return $array;
     }
+
+    function binary($s){
+        $nums = "";
+        
+        for($i = 0; $i < strlen($s);$i++){
+            if (is_numeric($s[$i])){
+                // echo $a/2;
+                $nums = $nums . $s[$i];
+                $bin = decbin($nums);
+                $split =explode($nums,$s);
+                $overall = $split[0] . $bin . $split[1];
+            }
+        }
+        return $overall;
+    }
 }
