@@ -60,4 +60,23 @@ class FourFunctions extends Controller{
         $overall = implode($overall_array);
         echo $overall;
     }
+
+    function prefix($operation){
+
+        $array = explode(" ",$operation);
+
+        if (operation[0] == '+'){
+            $ans = operation[1] + operation[2];
+
+        }else if ($operation[0] == '-'){
+            $ans = operation[1] - operation[2];
+
+        }else if ($operation[0] == '*'){
+            $ans = operation[1] * operation[2];
+
+        }else if ($operation[0] == '**'){
+            $ans = operation[1] ** operation[2];
+        }
+        return $ans;
+    }
 }
